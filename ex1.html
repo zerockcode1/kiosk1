@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .container > img {
+        width: 200px;
+        height: 200px;
+        margin: 30px;
+    }
+
+</style>
+
+  <h1>Ex1</h1>
+
+   <div class="container">
+       <img src="img/R1.png" class="item" data-name="떡볶이맛" data-price="3000">
+       <img src="img/R2.png" class="item" data-name="봉골레맛" data-price="3300">
+       <img src="img/R3.png" class="item" data-name="멸치맛" data-price="2700">
+   </div>
+
+<script>
+
+    document.querySelector(".container")
+    .addEventListener("click", function(e){
+        const target = e.target;
+
+        if(target.getAttribute("class") !== 'item'){
+            return;
+        }
+        console.log(target);
+
+        const name = target.getAttribute("data-name");
+        const price = target.getAttribute("data-price");
+
+        console.log(name, price);
+
+    }, false);
+
+</script>
+
+</body>
+</html>
